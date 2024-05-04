@@ -1,0 +1,122 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SignUp component snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="d-flex justify-content-center bg-secondary vh-100"
+  >
+    <div
+      class="bg-white p-3 rounded w-50"
+    >
+      <h2
+        class="text-4xl font-extrabold dark:text-blue-500"
+      >
+        Welcome to AfricArt!
+      </h2>
+      <p
+        class="my-4 text-lg text-gray-500"
+      >
+        Please register an account to continue...
+      </p>
+      <form>
+        <h2
+          class="text-2xl font-extrabold dark:text-black"
+        >
+          Register as:
+        </h2>
+        <br />
+        <div>
+          <input
+            name="UserType"
+            type="radio"
+            value="User"
+          />
+          User
+          <input
+            name="UserType"
+            type="radio"
+            value="Admin"
+          />
+          Admin
+        </div>
+        <div
+          class="mb-3"
+        >
+          <label
+            for="email"
+          >
+            <strong>
+              Username
+            </strong>
+          </label>
+          <input
+            autocomplete="off"
+            class="form-control rounded-0"
+            name="email"
+            placeholder="Enter username"
+            type="text"
+          />
+        </div>
+        <div
+          class="mb-3"
+        >
+          <label
+            for="email"
+          >
+            <strong>
+              Email
+            </strong>
+          </label>
+          <input
+            autocomplete="off"
+            class="form-control rounded-0"
+            name="email"
+            placeholder="Enter email"
+            type="email"
+          />
+        </div>
+        <div
+          class="mb-3"
+        >
+          <label
+            for="email"
+          >
+            <strong>
+              Password
+            </strong>
+          </label>
+          <input
+            class="form-control rounded-0"
+            name="password"
+            placeholder="Enter password"
+            type="password"
+          />
+        </div>
+        <button
+          class="btn btn-success w-100 bg-green-700"
+          type="submit"
+        >
+          Register
+        </button>
+      </form>
+      <p>
+        Already have an account?
+      </p>
+      <a
+        class="btn btn-default border w-100 bg-light rounded-0"
+        href="/login"
+      >
+        Login
+      </a>
+      <br />
+      <br />
+      <a
+        class="btn btn-default border w-100 bg-light rounded-0"
+        href="/"
+      >
+        I'm just browsing...
+      </a>
+    </div>
+  </div>
+</DocumentFragment>
+`;
