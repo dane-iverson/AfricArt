@@ -52,7 +52,7 @@ const EditArt = () => {
     };
     setLoading(true); // Start loading spinner
     axios
-      .put(`http://localhost:5555/art/${id}`, data) // Send PUT request to update artwork
+      .put(`https://africartbackend.onrender.com/art/${id}`, data) // Send PUT request to update artwork
       .then(() => {
         setLoading(false);
         enqueueSnackbar("Artwork edited!", { variant: "success" }); // Show success message

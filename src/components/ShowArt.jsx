@@ -38,7 +38,7 @@ const ShowArt = () => {
           <div className="max-w-3xl mx-auto">
             {/* Artwork container */}
             <img
-              src={`http://localhost:5555/static/${art.image}`}
+              src={`https://africartbackend.onrender.com/static/${art.image}`}
               className="w-full rounded-lg shadow-lg" // Display artwork image
               alt=""
             />

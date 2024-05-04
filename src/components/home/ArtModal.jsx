@@ -42,7 +42,7 @@ const ArtModal = ({ art, onClose }) => {
         {imageLoaded && (
           <div className="w-full h-64 overflow-hidden my-4">
             <img
-              src={`http://localhost:5555/static/${art.image}`}
+              src={`https://africartbackend.onrender.com/static/${art.image}`}
               alt=""
               className="w-full h-full object-cover"
             />

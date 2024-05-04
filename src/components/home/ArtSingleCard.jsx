@@ -30,7 +30,7 @@ const ArtSingleCard = ({ art }) => {
         <div className="w-full h-64 overflow-hidden rounded-t-lg">
           <img
             className="object-cover w-full h-full hover:scale-105 transition-transform duration-300 cursor-pointer"
-            src={`http://localhost:5555/static/${art.image}`}
+            src={`https://africartbackend.onrender.com/static/${art.image}`}
             alt={art.title}
           />
         </div>
