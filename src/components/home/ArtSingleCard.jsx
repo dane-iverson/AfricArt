@@ -4,11 +4,13 @@ import { SlSizeFullscreen } from "react-icons/sl";
 import { AiOutlineEdit, AiOutlineDelete } from "react-icons/ai";
 import ArtModal from "./ArtModal";
 import CreateOrder from "../CreateOrder";
+import { useSnackbar } from "notistack";
 
 const ArtSingleCard = ({ art }) => {
   // State variables
   const [showModal, setShowModal] = useState(false); // Controls visibility of ArtModal
   const [showCreateOrderModal, setShowCreateOrderModal] = useState(false); // Controls visibility of CreateOrder modal
+  const { enqueueSnackbar } = useSnackbar(); // Initialize useSnackbar
 
   // Toggle ArtModal visibility
   const toggleModal = () => {
@@ -18,6 +20,11 @@ const ArtSingleCard = ({ art }) => {
   // Toggle CreateOrder modal visibility
   const toggleCreateOrderModal = () => {
     setShowCreateOrderModal(!showCreateOrderModal);
+  };
+
+  // Handle click on disabled "I'm interested" button
+  const handleDisabledClick = () => {
+    enqueueSnackbar("Please log in to proceed.", { variant: "info" });
   };
 
   // Check if user is admin or logged in
@@ -52,20 +59,25 @@ const ArtSingleCard = ({ art }) => {
 
         {/* Actions for logged-in users and admins */}
         <div className="flex justify-between items-center">
-          {isLoggedIn && (
-            // Button to show CreateOrder modal
-            <button
-              className="px-4 py-2 text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-              onClick={toggleCreateOrderModal}
-            >
-              I'm interested
-            </button>
-          )}
+          {/* Button for "I'm interested" */}
+          <button
+            className={`px-4 py-2 text-sm font-semibold ${
+              isLoggedIn
+                ? "text-white bg-blue-600 hover:bg-blue-700"
+                : "text-gray-400 bg-gray-200 cursor-not-allowed"
+            } rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400`}
+            onClick={isLoggedIn ? toggleCreateOrderModal : handleDisabledClick}
+            // Disable button if not logged in
+          >
+            I'm interested
+          </button>
+
           {/* Button to show ArtModal */}
           <SlSizeFullscreen
             className="text-3xl text-green-800 hover:text-black cursor-pointer"
             onClick={toggleModal}
           />
+
           {/* Admin options: edit and delete icons */}
           {isAdmin && (
             <>

@@ -33,11 +33,13 @@ const Navbar = () => {
               {name} {/* Display user name */}
             </span>
             {/* Stock profile image */}
-            <img
-              className="w-12 h-12 rounded-full md:order-1"
-              src="https://cdn.vectorstock.com/i/preview-1x/08/19/gray-photo-placeholder-icon-design-ui-vector-35850819.jpg"
-              alt="user photo"
-            />
+            {isLoggedIn && (
+              <img
+                className="w-12 h-12 rounded-full md:order-1"
+                src="https://cdn.vectorstock.com/i/preview-1x/08/19/gray-photo-placeholder-icon-design-ui-vector-35850819.jpg"
+                alt="user photo"
+              />
+            )}
           </div>
 
           {/* Navigation links */}

@@ -49,14 +49,16 @@ const Login = () => {
           enqueueSnackbar("Login successful!", { variant: "success" }); // Show success message
           navigate("/"); // Navigate to home page
           setAdminKey(null);
-        } else {
-          enqueueSnackbar("Login failed. Please check your credentials.", {
+        } else if (response.status == 401) {
+          enqueueSnackbar("Login details incorrect. Please try again.", {
             variant: "error", // Show error message
           });
         }
       })
       .catch((err) => {
-        setError(err, "Login failed. Please try again later."); // Show error message
+        enqueueSnackbar("Login details incorrect. Please try again.", {
+          variant: "error",
+        }); // Show error message
       });
   };
 
